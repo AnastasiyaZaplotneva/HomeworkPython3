@@ -5,13 +5,26 @@
 
 import random
 import math
-numbers = list()
-for i in range(0,7):
-    numbers.append(random.randint(1, 10))
-print(numbers)
-product_of_numbers = list()
-j = -1
-for i in range(math.ceil(len(numbers)/2)):
-    product_of_numbers.append(numbers[i]*numbers[j])
-    j += -1
-print(product_of_numbers)
+
+
+def create_list():
+    numbers = list()
+    for i in range(0,7):
+        numbers.append(random.randint(1, 20))
+    return numbers
+
+
+def finding_products(numbers):
+    product_of_numbers = list()
+    j = -1
+    for i in range(math.ceil(len(numbers)/2)):
+            product_of_numbers.append(numbers[i]*numbers[j])
+            j += -1
+    return product_of_numbers
+
+
+nums = create_list()
+
+print(nums)
+
+print(finding_products(nums))
